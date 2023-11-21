@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/constants/theme.dart';
+import 'package:flutter_ecommerce/widgets/chip_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
+
+import '../widgets/ads_banner_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -32,36 +36,20 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.all(25.0),
           child: Column(
             children: [
-              Container(
-                width: double.infinity,
-                height: 180,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: kPrimaryColor,
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        padding: const EdgeInsets.only(left: 20.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text('Apple Store',
-                                style: AppTheme.kBigTitle),
-                            Text(
-                              "Find the Apple product and accessories are looking for",
-                              style: AppTheme.kBodyText,
-                            ),
-                            ElevatedButton(
-                                onPressed: () {},
-                                child: const Text('Shop new year'))
-                          ],
-                        ),
-                      ),
+              const AdsBannerWidget(),
+              SizedBox(
+                height: 80,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    ChipWidget(chipLabel: 'ALl'),
+                    ChipWidget(chipLabel: 'Computers'),
+                    ChipWidget(chipLabel: ''
+                        ''
+                        ''
+                        ''
+                        ''
                     ),
-                    Image.asset('assets/general/landing.png')
                   ],
                 ),
               )

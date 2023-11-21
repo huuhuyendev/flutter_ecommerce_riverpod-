@@ -14,8 +14,8 @@ class AppTheme {
     fontWeight: FontWeight.bold,
   );
   static final kBodyText = TextStyle(
-    fontSize: 11,
-    color: Colors.grey.shade400,
+    fontSize: 12,
+    color: Colors.grey.shade500,
   );
 }
 
