@@ -10,6 +10,9 @@ class ChipWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(label: Text(chipLabel));
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: Chip(label: Text(chipLabel)),
+    );
   }
 }

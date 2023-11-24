@@ -13,6 +13,17 @@ class AppTheme {
     color: kWhiteColor,
     fontWeight: FontWeight.bold,
   );
+  static const kHeadingOne = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
+  static const kSeeAll = TextStyle(
+    color: kPrimaryColor,
+  );
+  static const kCardTitle = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+  );
   static final kBodyText = TextStyle(
     fontSize: 12,
     color: Colors.grey.shade500,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/constants/theme.dart';
 import 'package:flutter_ecommerce/widgets/chip_widget.dart';
+import 'package:flutter_ecommerce/widgets/product_card_widget.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 
@@ -44,14 +46,49 @@ class HomePage extends StatelessWidget {
                   children: const [
                     ChipWidget(chipLabel: 'ALl'),
                     ChipWidget(chipLabel: 'Computers'),
-                    ChipWidget(chipLabel: ''
-                        ''
-                        ''
-                        ''
-                        ''
-                    ),
+                    ChipWidget(chipLabel: 'Smartphones'),
+                    ChipWidget(chipLabel: 'Tablets'),
+                    ChipWidget(chipLabel: 'Accessories'),
                   ],
                 ),
+              ),
+              const Gap(12),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Hot sales', style: AppTheme.kHeadingOne),
+                  Text('See all', style: AppTheme.kSeeAll),
+                ],
+              ),
+              Container(
+                height: 300,
+                padding: const EdgeInsets.all(4.0),
+                child: ListView.builder(
+                  padding: const EdgeInsets.all(8.0),
+                  shrinkWrap: true,
+                  itemCount: 3,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) =>
+                      ProductCardWidget(productIndex: index),
+                ),
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Featured Products', style: AppTheme.kHeadingOne),
+                  Text('See all', style: AppTheme.kSeeAll),
+                ],
+              ),
+              MasonryGridView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 4,
+                shrinkWrap: true,
+                gridDelegate:
+                    const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemBuilder: (context, index) => SizedBox(
+                    height: 250, child: ProductCardWidget(productIndex: index)),
               )
             ],
           ),
